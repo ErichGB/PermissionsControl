@@ -23,7 +23,7 @@ class $q{
      *  If any of the promises is resolved, this resulting promise will be returned
      *  with the same resolution value.
      */
-    any = (promises) => {
+    static any = (promises) => {
         return new Promise( (resolve, reject) => {
             const results = isArray(promises) ? [] : {};
 
