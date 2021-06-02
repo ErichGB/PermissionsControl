@@ -1,5 +1,3 @@
-import $q from '../$q';
-
 /**
  * Service responsible for handling view based authorization
  * @name permission.PermAuthorization
@@ -33,7 +31,7 @@ class PermAuthorization{
     resolveExceptPrivilegeMap = (deferred, map) => {
         const exceptPromises = map.resolvePropertyValidity(map.except);
 
-        $q.any(exceptPromises)
+        new Promise.any(exceptPromises)
             .then( (rejectedPermissions) => {
                 deferred.reject(rejectedPermissions);
             })
