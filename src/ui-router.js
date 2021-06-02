@@ -21,7 +21,7 @@ import isEqual from 'lodash/isEqual';
  * @param PermStatePermissionMap {permission.ui.PermStatePermissionMap}
  */
 
-class permissionUI {
+export default class permissionUI {
     constructor(router, options) {
         this.name = "ui-router-permission-plugin";
 
@@ -67,5 +67,3 @@ class permissionUI {
         permissionUI.prototype.stateService = router.stateService;
     }
 }
-
-export default permissionUI;
