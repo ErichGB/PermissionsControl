@@ -57,7 +57,7 @@ class PermAuthorization{
 
         const onlyPromises = map.resolvePropertyValidity(map.only);
 
-        $q.any(onlyPromises)
+        Promise.any(onlyPromises)
             .then((resolvedPermissions) =>
                 deferred.resolve(resolvedPermissions))
             .catch((rejectedPermission) =>

@@ -1,7 +1,6 @@
 import PermStatePermissionMap from '../authorization/stateMap';
 import plugin  from '../ui-router';
 // helpers
-import $q from '../$q';
 import isArray from 'lodash/isArray';
 
 /**
@@ -127,7 +126,7 @@ function PermStateAuthorization() {
         return privilegesNames.map( (statePrivileges) => {
             const resolvedStatePrivileges = map.resolvePropertyValidity(statePrivileges);
 
-            return $q.any(resolvedStatePrivileges)
+            return Promise.any(resolvedStatePrivileges)
                 .then(function (resolvedPermissions) {
                     if (isArray(resolvedPermissions)) {
                         return resolvedPermissions[0];
