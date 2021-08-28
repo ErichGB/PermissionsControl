@@ -31,7 +31,7 @@ class PermAuthorization{
     resolveExceptPrivilegeMap = (deferred, map) => {
         const exceptPromises = map.resolvePropertyValidity(map.except);
 
-        new Promise.any(exceptPromises)
+        Promise.any(exceptPromises)
             .then( (rejectedPermissions) => {
                 deferred.reject(rejectedPermissions);
             })
