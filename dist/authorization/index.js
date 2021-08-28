@@ -28,7 +28,7 @@ class PermAuthorization {
 
     _defineProperty(this, "resolveExceptPrivilegeMap", (deferred, map) => {
       const exceptPromises = map.resolvePropertyValidity(map.except);
-      new Promise.any(exceptPromises).then(rejectedPermissions => {
+      Promise.any(exceptPromises).then(rejectedPermissions => {
         deferred.reject(rejectedPermissions);
       }).catch(() => {
         this.resolveOnlyPermissionMap(deferred, map);
